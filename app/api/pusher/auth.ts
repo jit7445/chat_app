@@ -7,6 +7,10 @@ export default async function handler(
   request: NextApiRequest, 
   response: NextApiResponse
 ) {
+  if (request.method !== "POST") {
+    return response.status(405).json({ message: "Method Not Allowed" });
+  }
+
   try {
     const session = await getServerSession(request, response, authOptions);
 
