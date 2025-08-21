@@ -21,9 +21,9 @@ export async function POST(request: Request) {
     const defaultIsGroup = isGroup !== undefined ? isGroup : false;
 
     if (isGroup) {
-      console.log("inside group");
+      // console.log("inside group");
       const groupMembers = members.map((member: any) => ({ id: member.value }));
-      console.log("group:", groupMembers);
+      // console.log("group:", groupMembers);
 
       const newConversation = await prisma.conversation.create({
         data: {
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
         }
       });
 
-      console.log("Conversation created with ID:", newConversation.id);
+      // console.log("Conversation created with ID:", newConversation.id);
 
       newConversation.users.forEach((user) => {
         try {

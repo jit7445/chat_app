@@ -29,7 +29,7 @@ export async function DELETE(
         users: true
       }
     });
-    console.log("exist conversation:",existingConversation);
+    // console.log("exist conversation:",existingConversation);
 
     if (!existingConversation) {
       return new NextResponse('Invalid ID', { status: 400 });

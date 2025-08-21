@@ -8,12 +8,12 @@ export default async function handler(
   request: NextApiRequest, 
   response: NextApiResponse
 ) {
-  console.log("Request headers:", request.headers);
-  console.log("Request cookies:", request.cookies);
+  // console.log("Request headers:", request.headers);
+  // console.log("Request cookies:", request.cookies);
 
   try {
     const session = await getServerSession(request, response, authOptions);
-    console.log("Session data:", session);
+    // console.log("Session data:", session);
 
     if (!session?.user?.email) {
       return response.status(401).json({ message: "Unauthorized" });
